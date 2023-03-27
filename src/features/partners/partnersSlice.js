@@ -1,7 +1,7 @@
-import { PARTNERS } from '../../app/shared/PARTNERS.js';
+import { PARTNERS } from "../../app/shared/PARTNERS.js";
 
 export const selectAllPartners = () => {
-  return PARTNERS; 
+  return PARTNERS;
 };
 
 export const selectFeaturedPartner = () => {
