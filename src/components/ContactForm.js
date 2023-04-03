@@ -11,18 +11,18 @@ const ContactForm = () => {
 
   return (
     <Formik
-    initialValues={{
-        firstName: '',
-        lastName: '',
-        phoneNum: '',
-        email: '',
+      initialValues={{
+        firstName: "",
+        lastName: "",
+        phoneNum: "",
+        email: "",
         agree: false,
-        contactType: 'By Phone',
-        feedback: '',
-    }}
-    onSubmit={handleSubmit}
-    validate={validateContactForm}
->
+        contactType: "By Phone",
+        feedback: "",
+      }}
+      onSubmit={handleSubmit}
+      validate={validateContactForm}
+    >
       <Form>
         <FormGroup row>
           <Label htmlFor="firstName" md="2">
@@ -34,9 +34,9 @@ const ContactForm = () => {
               placeholder="First Name"
               className="form-control"
             />
-            <ErrorMessage name='firstName'>
-                            {(msg) => <p className='text-danger'>{msg}</p>}
-                        </ErrorMessage>
+            <ErrorMessage name="firstName">
+              {(msg) => <p className="text-danger">{msg}</p>}
+            </ErrorMessage>
           </Col>
         </FormGroup>
         <FormGroup row>
@@ -49,9 +49,9 @@ const ContactForm = () => {
               placeholder="Last Name"
               className="form-control"
             />
-            <ErrorMessage name='lastName'>
-                            {(msg) => <p className='text-danger'>{msg}</p>}
-                        </ErrorMessage>
+            <ErrorMessage name="lastName">
+              {(msg) => <p className="text-danger">{msg}</p>}
+            </ErrorMessage>
           </Col>
         </FormGroup>
         <FormGroup row>
@@ -64,9 +64,9 @@ const ContactForm = () => {
               placeholder="Phone"
               className="form-control"
             />
-            <ErrorMessage name='phoneNum'>
-                            {(msg) => <p className='text-danger'>{msg}</p>}
-                        </ErrorMessage>
+            <ErrorMessage name="phoneNum">
+              {(msg) => <p className="text-danger">{msg}</p>}
+            </ErrorMessage>
           </Col>
         </FormGroup>
         <FormGroup row>
@@ -80,9 +80,9 @@ const ContactForm = () => {
               type="email"
               className="form-control"
             />
-            <ErrorMessage name='email'>
-                            {(msg) => <p className='text-danger'>{msg}</p>}
-                        </ErrorMessage>
+            <ErrorMessage name="email">
+              {(msg) => <p className="text-danger">{msg}</p>}
+            </ErrorMessage>
           </Col>
         </FormGroup>
         <FormGroup row>
