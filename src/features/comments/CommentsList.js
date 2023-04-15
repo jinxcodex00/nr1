@@ -12,7 +12,19 @@ const CommentsList = ({ campsiteId }) => {
   const isLoading = useSelector((state) => state.comments.isLoading);
   const errMsg = useSelector((state) => state.comments.errMsg);
 
-  if (comments) {
+  if (isLoading) {
+    return (
+      <Row>
+        <Loading />
+      </Row>
+    );
+  } else if (errMsg) {
+    return (
+      <Row>
+        <Error errMsg={errMsg} />
+      </Row>
+    );
+  } else if (comments) {
     return isLoading ? (
       <Loading />
     ) : errMsg ? (
