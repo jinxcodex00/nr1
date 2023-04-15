@@ -5,32 +5,34 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import ContactPage from "./pages/ContactPage";
-import CampsiteDetailPage from './pages/CampsiteDetailPage';
-import AboutPage from './pages/AboutPage';
+import CampsiteDetailPage from "./pages/CampsiteDetailPage";
+import AboutPage from "./pages/AboutPage";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { fetchCampsites } from "./features/campsites/campsitesSlice";
+import { fetchCampsites } from "./fetchCampsites";
+import { fetchPartners } from "./fetchPartners";
 
 function App() {
-    const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-useEffect(() => {
+  useEffect(() => {
     dispatch(fetchCampsites());
-}, [dispatch]);
-    return (
-        <div className='App'>
-            <Header />
-            <Routes>
-                <Route path='/' element={<HomePage />} />
-                <Route path='contact' element={<ContactPage />} />
-                <Route path='directory' element={<CampsitesDirectoryPage />} />
-                <Route path='directory/:campsiteId' element={<CampsiteDetailPage />} />
-                <Route path='about' element={<AboutPage />} />
-                
-            </Routes>
-            <Footer />
-        </div>
-    );
+    dispatch(fetchPartners());
+  }, [dispatch]);
+  
+  return (
+    <div className="App">
+      <Header />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="contact" element={<ContactPage />} />
+        <Route path="directory" element={<CampsitesDirectoryPage />} />
+        <Route path="directory/:campsiteId" element={<CampsiteDetailPage />} />
+        <Route path="about" element={<AboutPage />} />
+      </Routes>
+      <Footer />
+    </div>
+  );
 }
 
 export default App;
