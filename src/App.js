@@ -9,8 +9,9 @@ import CampsiteDetailPage from "./pages/CampsiteDetailPage";
 import AboutPage from "./pages/AboutPage";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { fetchCampsites } from "./fetchCampsites";
-import { fetchPartners } from "./fetchPartners";
+import { fetchCampsites } from "./features/campsites/campsitesSlice";
+import { fetchPartners } from "./features/partners/partnersSlice";
+
 
 function App() {
   const dispatch = useDispatch();
@@ -19,7 +20,7 @@ function App() {
     dispatch(fetchCampsites());
     dispatch(fetchPartners());
   }, [dispatch]);
-  
+
   return (
     <div className="App">
       <Header />

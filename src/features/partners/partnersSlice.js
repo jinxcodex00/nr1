@@ -9,6 +9,18 @@ const initialState = {
   errMsg: "",
 };
 
+export const fetchPartners = createAsyncThunk(
+  "partners/fetchPartners",
+  async () => {
+    const response = await fetch(baseUrl + "partners");
+    if (!response.ok) {
+      return Promise.reject("Unable to fetch, status: " + response.status);
+    }
+    const data = await response.json();
+    return data;
+  }
+);
+
 const partnersSlice = createSlice({
   name: "partners",
   initialState,
@@ -39,14 +51,3 @@ export const selectFeaturedPartner = (state) => {
   return state.partners.partnersArray.find((partner) => partner.featured);
 };
 
-export const fetchPartners = createAsyncThunk(
-  "partners/fetchPartners",
-  async () => {
-    const response = await fetch(baseUrl + "partners");
-    if (!response.ok) {
-      return Promise.reject("Unable to fetch, status: " + response.status);
-    }
-    const data = await response.json();
-    return data;
-  }
-);
