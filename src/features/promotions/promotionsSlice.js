@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { PROMOTIONS } from '../../app/shared/PROMOTIONS';
+//import { PROMOTIONS } from '../../app/shared/PROMOTIONS';
+import { baseUrl } from '../../app/shared/baseUrl';
 
 const initialState = {
     promotionsArray: PROMOTIONS
